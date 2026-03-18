@@ -1,5 +1,19 @@
 package com.norman.webviewup.demo;
 
+import java.io.File;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.norman.webviewup.lib.UpgradeCallback;
+import com.norman.webviewup.lib.WebViewUpgrade;
+import com.norman.webviewup.lib.source.UpgradeAssetSource;
+import com.norman.webviewup.lib.source.UpgradePackageSource;
+import com.norman.webviewup.lib.source.UpgradeSource;
+import com.norman.webviewup.lib.source.download.UpgradeDownloadSource;
+import com.norman.webviewup.lib.util.ProcessUtils;
+
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,25 +25,8 @@ import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-
-import com.norman.webviewup.lib.UpgradeCallback;
-import com.norman.webviewup.lib.WebViewUpgrade;
-import com.norman.webviewup.lib.source.UpgradeAssetSource;
-import com.norman.webviewup.lib.source.UpgradePackageSource;
-import com.norman.webviewup.lib.source.UpgradeSource;
-import com.norman.webviewup.lib.source.download.UpgradeDownloadSource;
-import com.norman.webviewup.lib.util.ProcessUtils;
-import com.norman.webviewup.lib.util.VersionUtils;
-
-import java.io.File;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 public class MainActivity extends Activity implements UpgradeCallback {
@@ -84,6 +81,16 @@ public class MainActivity extends Activity implements UpgradeCallback {
                         "122.0.6261.64",
                         "https://mirror.ghproxy.com/https://raw.githubusercontent.com/JonaNorman/ShareFile/main/com.google.android.webview_122.0.6261.64_arm64-v8a.zip",
                         "网络"),
+                new UpgradeInfo(
+                        "com.google.android.webview",
+                        "122.0.6261.64",
+                        "com.google.android.webview_122.0.6261.64-626106401_minAPI26_maxAPI28(arm64-v8a,armeabi-v7a)(nodpi)_apkmirror.com.apk",
+                        "内置"),
+                new UpgradeInfo(
+                        "com.google.android.webview",
+                        "131.0.6778.135",
+                        "arm64-v8a+armeabi-v7a.apk",
+                        "内置(旧版本)"),
                 new UpgradeInfo(
                         "com.huawei.webview",
                         "14.0.0.331",
